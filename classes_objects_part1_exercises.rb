@@ -9,8 +9,9 @@ attr_reader :year
     @current_speed = 0
   end
 
-  def change_color(c)
-    self.color = c
+  def spray_paint(color)
+    self.color = color
+    puts "Your new #{color} paint job looks great!"
   end
 
   def speed_up(number)
@@ -31,9 +32,9 @@ attr_reader :year
     @current_speed = 0
     puts "You shut the car off, and are now going #{@current_speed} mph."
   end
-
 end
 
+rachel = MyCar.new('2010', 'Black', 'Sedan')
 lumina = MyCar.new('2002', 'Red', 'Blazer')
 lumina.current_speed
 lumina.speed_up(20)
@@ -41,6 +42,7 @@ lumina.current_speed
 lumina.brake(10)
 lumina.current_speed
 lumina.shut_off
-lumina.change_color('Blue')
+lumina.color = "Blue"
+lumina.spray_paint("Ocean Green")
 puts lumina.color
 puts lumina.year
