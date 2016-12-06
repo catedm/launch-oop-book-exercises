@@ -1,23 +1,31 @@
 class GoodDog
-  @@number_of_dogs = 0
+attr_accessor :name, :height, :weight
 
-  def initialize
-    @@number_of_dogs += 1
-  end
-
-  def self.total_number_of_dogs
-    @@number_of_dogs
-  end
-
-  def self.what_am_i
-    "I'm a GoodDog class!"
-  end
+def initialize(n, h, w)
+  self.name = n
+  self.height = h
+  self.weight = w
 end
 
-puts GoodDog.what_am_i
-puts GoodDog.total_number_of_dogs
+def change_info(n, h, w)
+  self.name = n
+  self.height = h
+  self.weight = w
+end
 
-dog1 = GoodDog.new
-dog2 = GoodDog.new
+def info
+  "#{self.name} weighs #{self.weight} and is #{self.height} tall."
+end
 
-puts GoodDog.total_number_of_dogs
+def what_is_self
+  self
+end
+
+end
+
+sparky = GoodDog.new('Sparky', '12 inches', '10 lbs')
+p sparky.what_is_self
+p sparky.info
+sparky.change_info('Spartacus', '24 inches', '25lbs')
+p sparky.info
+p sparky.what_is_self
